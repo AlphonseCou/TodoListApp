@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./pages/Home/Home";
-import Header from "./components/Header/Header";
+import Header from "./components/Layout/Header/Header";
 import TodoList from "./pages/TodoList/TodoList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
