@@ -32,8 +32,6 @@ function TodoList() {
                     type="checkbox"
                     size="xlg"
                     checked={todo.status}
-                    value="1"
-                    onChange={(e) => setChecked(e.currentTarget.checked)}
                   >
                     Fait
                   </ToggleButton>
