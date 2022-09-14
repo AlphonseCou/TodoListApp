@@ -1,0 +1,26 @@
+.page_todolist{
+    display: flex;
+    flex-direction: column;
+}
+.menu_todo{
+    margin-top: 5%;
+    padding-top:1%;
+}
+.button_todo{
+    font-size: large;
+    margin:5px
+}
+.status_todo{
+    width: 10%;
+}
+.togglebutton_todo{
+    margin-left:10%
+    
+}
+.li_todolist{
+    display: flex;
+    margin-top:1%;
+    justify-content: center;
+    font-size:x-large;
+   
+}
