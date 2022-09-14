@@ -5,7 +5,6 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import "./TodoList.css";
 
 function TodoList() {
-  const [checked, setChecked] = useState(false);
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
