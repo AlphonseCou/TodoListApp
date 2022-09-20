@@ -5,6 +5,7 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 import "./TodoList.css";
 
 function TodoList() {
+  const [, setChecked] = useState();
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -16,13 +17,22 @@ function TodoList() {
     }
     getAllTodo();
   }, []);
+
+  function handleChange(todo) {
+    axios.put("http://localhost:8080/admin/todos/todo/" + todo.id + "/change", {
+      name: todo.name,
+      description: todo.description,
+      status: todo.status,
+    });
+  }
+
   return (
     <>
       <div className="page_todolist">
         <div className="div_todolist">
           {todos.map((todo, i) => {
             return (
-              <li className="li_todolist" key={todo.name}>
+              <li className="li_todolist" key={todo.id}>
                 {todo.name}
                 <div className="status_todo">
                   <ToggleButton
@@ -31,6 +41,10 @@ function TodoList() {
                     type="checkbox"
                     size="xlg"
                     checked={todo.status}
+                    onChange={() => {
+                      setChecked(!todo.status);
+                      handleChange(todo);
+                    }}
                   >
                     Fait
                   </ToggleButton>
